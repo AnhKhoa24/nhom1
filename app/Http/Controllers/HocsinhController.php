@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Hocsinh;
-use App\Http\Requests\StoreHocsinhRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\UpdateHocsinhRequest;
 use Illuminate\Support\Facades\DB;
 class HocsinhController extends Controller
@@ -30,9 +30,9 @@ class HocsinhController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreHocsinhRequest $request)
+    public function store(Request $request)
     {
-        //
+        dd($request);
     }
 
     /**

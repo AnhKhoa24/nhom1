@@ -3,10 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Lophoc;
-use App\Http\Requests\StoreLophocRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\UpdateLophocRequest;
 use Illuminate\Support\Facades\DB;
-
 class LophocController extends Controller
 {
     /**
@@ -30,9 +29,13 @@ class LophocController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreLophocRequest $request)
+    public function store(Request $request)
     {
-        //
+       $lophoc = new Lophoc();
+       $lophoc->tenlop = $request->input('tenlop');
+       $lophoc->soluong = $request->input('soluong');
+       $lophoc->save();
+       return redirect('/lophoc');
     }
 
     /**
