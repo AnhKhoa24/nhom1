@@ -7,7 +7,7 @@
         <th>Tên lớp</th>
         <th>Số lượng</th>
         <th>
-            <a href="">Thêm mới</a>
+            <a href="/lophoc/create">Thêm mới</a>
         </th>
     </tr>
     @foreach ($lophocs as $item)
