@@ -26,9 +26,6 @@ class LophocController extends Controller
         //hahahahahahahaha
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
        $lophoc = new Lophoc();
@@ -38,17 +35,10 @@ class LophocController extends Controller
        return redirect('/lophoc');
     }
 
-    /**
-     * Display the specified resource.
-     */
     public function show(Lophoc $lophoc)
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Lophoc $lophoc)
     {
         //

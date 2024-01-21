@@ -19,20 +19,25 @@ class HocsinhController extends Controller
         ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
-        //
+        $lophocs = DB::select("SELECT malop, tenlop FROM lophocs");
+        return view('hocsinhs.create',[
+            'lophocs'=> $lophocs
+        ]);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        dd($request);
+        $hocsinh = new Hocsinh();
+        $hocsinh->name = $request->input('name');
+        $hocsinh->ngaysinh = $request->input('ngaysinh');
+        $hocsinh->gioitinh = $request->input('gioitinh');
+        $hocsinh->malop = $request->input('malop');
+        $hocsinh->save();
+        return redirect("hocsinh");
     }
 
     /**
